@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  background: #0f1f2f; /* dark icy blue background */
-  color: #d0e8ff; /* light icy blue text */
+  background: #0f1f2f;
+  color: #cce7ff;
   font-family: monospace;
   overflow-x: hidden;
 }
@@ -12,47 +12,48 @@ body {
 }
 
 .sidebar {
-  background: #2a3e57; /* medium icy blue */
+  background: #2a3e57; /* ice blue */
   padding: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
   justify-content: center;
+  width: 100px; /* fixed width for sidebar */
 }
 
 .icon-button {
   width: 60px;
   height: 60px;
   background: transparent;
-  border: 2px solid #a8c7e7; /* light ice blue border */
+  border: 2px solid #a7c7e7;
   border-radius: 50%;
-  color: #a8c7e7; /* light icy blue */
+  color: #a7c7e7;
   font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   overflow: hidden;
+  box-shadow: 0 0 8px #6fa3d9;
 }
 
 .icon-button img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: brightness(0.9) saturate(1.2) drop-shadow(0 0 1px #a8c7e7);
-}
-
-.icon-button.neon {
-  box-shadow: 0 0 8px #a8c7e7, 0 0 15px #a8c7e7;
 }
 
 .profile {
   flex: 1;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* center vertically */
+  align-items: center;      /* center horizontally */
   padding: 40px;
-  background: #1a2d48; /* darker icy blue */
+  background: #1a2d48; /* darker ice blue */
   position: relative;
+  text-align: center;
 }
 
 .avatar {
@@ -61,7 +62,7 @@ body {
   height: 180px;
   margin: auto;
   border-radius: 50%;
-  border: 5px solid #74a9d8; /* ice blue border */
+  border: 5px solid #7db9e8; /* lighter ice blue */
   overflow: hidden;
 }
 
@@ -69,27 +70,27 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(10%) brightness(1.1);
 }
 
 .online {
   position: absolute;
   bottom: 0;
   right: 0;
-  background: #74a9d8; /* ice blue */
-  color: #e0f0ff;
+  background: #7db9e8;
+  color: #0f1f2f;
   font-size: 12px;
   padding: 2px 6px;
   border-radius: 10px;
+  font-weight: bold;
 }
 
 .quote {
-  background: #3a5785; /* medium ice blue */
+  background: #2a3e57;
   display: inline-block;
   padding: 10px;
   margin-top: 20px;
   border-radius: 20px;
-  color: #d0e8ff;
+  box-shadow: 0 0 10px #5b87b3;
 }
 
 .yt-container {
@@ -102,15 +103,18 @@ body {
 
 .yt-controls button {
   padding: 10px 20px;
-  background: #3a5785; /* ice blue button */
-  color: #d0e8ff;
+  background: #7db9e8;
+  color: #0f1f2f;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 0 10px #7db9e8;
+  transition: background 0.3s ease;
 }
+
 .yt-controls button:hover {
-  background: #6098d8;
+  background: #a1c4f1;
 }
 
 .terra {
@@ -120,18 +124,19 @@ body {
   background: #2a3e57;
   display: inline-block;
   padding: 10px 20px;
-  color: #f1f1f1;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #5b87b3;
 }
 
 .terra span {
-  color: #B0C4DE; /* Light Steel Blue for ZAYDAH */
+  color: LightSteelBlue;
 }
 
 .modal {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(15, 31, 47, 0.85);
+  background: rgba(10, 25, 40, 0.75);
   backdrop-filter: blur(10px);
   z-index: 1000;
   justify-content: center;
@@ -143,15 +148,15 @@ body {
 }
 
 .modal-content {
-  background: rgba(100, 140, 180, 0.1);
-  border: 1px solid rgba(180, 210, 240, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(180, 200, 220, 0.3);
   backdrop-filter: blur(20px);
   padding: 30px;
   border-radius: 20px;
   text-align: center;
   max-width: 90%;
-  box-shadow: 0 8px 32px rgba(40, 70, 110, 0.6);
-  color: #d0e8ff;
+  box-shadow: 0 8px 32px rgba(0, 50, 90, 0.7);
+  color: #cce7ff;
 }
 
 .images {
@@ -167,8 +172,7 @@ body {
   height: 200px;
   object-fit: cover;
   border-radius: 20px;
-  box-shadow: 0 0 15px rgba(100, 140, 180, 0.4);
-  filter: brightness(1) saturate(1.1);
+  box-shadow: 0 0 15px rgba(135, 190, 240, 0.5);
 }
 
 .friend-list {
@@ -184,14 +188,13 @@ body {
 .friend-list li {
   display: flex;
   align-items: center;
-  background: rgba(50, 80, 120, 0.15);
-  border: 1px solid rgba(100, 140, 180, 0.3);
+  background: rgba(120, 170, 220, 0.15);
+  border: 1px solid rgba(180, 200, 220, 0.4);
   backdrop-filter: blur(15px);
   padding: 10px 15px;
   border-radius: 15px;
   width: 250px;
-  box-shadow: 0 4px 20px rgba(40, 70, 110, 0.5);
-  color: #d0e8ff;
+  box-shadow: 0 4px 20px rgba(0, 50, 90, 0.5);
 }
 
 .friend-list img {
@@ -200,11 +203,10 @@ body {
   border-radius: 50%;
   margin-right: 10px;
   object-fit: cover;
-  filter: none;
 }
 
 .friend-list a {
-  color: #a8c7e7;
+  color: #cce7ff;
   text-decoration: none;
   font-weight: bold;
 }
@@ -212,17 +214,20 @@ body {
 .close-gallery,
 .close-friends {
   margin-top: 15px;
-  background: #3a5785;
-  color: #d0e8ff;
+  background: #7db9e8;
+  color: #0f1f2f;
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 0 10px #7db9e8;
+  transition: background 0.3s ease;
 }
+
 .close-gallery:hover,
 .close-friends:hover {
-  background: #6098d8;
+  background: #a1c4f1;
 }
 
 body.blurred .container {
